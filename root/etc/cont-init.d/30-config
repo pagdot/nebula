@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+
+# Display variables for troubleshooting
+echo -e "Variables set:\\n\
+PGID=${PGID}\\n\
+PUID=${PUID}\\n\
+TZ=${TZ}\\n\
+"
+
+# make folders
+mkdir -p \
+    /config/crontabs
+
+# copy config file
+[[ ! -f /config/config.yml ]] && \
+	cp /defaults/config.yml /config/config.yml
+
+# permissions
+chown -R abc:abc /config
