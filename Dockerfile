@@ -1,7 +1,7 @@
 FROM lsiobase/ubuntu:focal as downloader
 
 ARG TARGETPLATFORM
-ARG VERSION=1.3.0
+ARG VERSION=1.5.2
 
 #Install wget
 RUN apt update && apt install -y wget
@@ -15,7 +15,7 @@ RUN /nebula -version
 
 FROM lsiobase/ubuntu:focal
 
-ARG VERSION=1.3.0
+ARG VERSION=1.5.2
 
 LABEL build_version="Pagdot version: ${VERSION}"
 LABEL maintainer="pagdot"
